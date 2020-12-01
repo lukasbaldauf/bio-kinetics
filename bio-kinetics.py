@@ -191,11 +191,11 @@ a2.set(xlabel='Temperature (Kelvin)',ylabel='conversion rate')
 
 #a2.plot(datalist[k]['t1'].iloc[2:],1/60*(Y[:-1]-Y[1:])/(T_end-T_start)*N,lw=0.8)
 a.legend()
-#f.show()
+f.show()
 k=19
 print("#"*k + "\nSimulated data:\n" + "#"*k)
 print('log10(A)= {:.3f}   E= {:.3f}   n={:.3f}'.format(np.log10(A_ex),E_ex/1000,n_ex))
-print('\n'+'#'*k+"\nExperimental data:\n"+"#"*k)
+print('\n'+'#'*k+"\nCalculated data:\n"+"#"*k)
 print('log10(A)= {:.3f}   E= {:.3f}   n={:.3f}'.format(res.x[0],res.x[1],res.x[2]/100))
 print('\n\n'+'Total minimization time    = {:.2f} seconds'.format(sum(times_min)))
 print('Nonlinear equation solving = {:.2f} seconds'.format(sum(times_nonlinear)))
