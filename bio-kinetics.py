@@ -180,7 +180,7 @@ def Plot_raw_data():
     ax.plot(data['t'][i][s:e],data['dx_exp'][i][s:e],label='dm_norm/dt',c='k',ls='--')
     ax.set(xlabel='time',ylabel='reaction rate')
     aT = ax.twinx()
-    aT.plot(data['t'][i][s:e],data['T'][i][s:e],label='T (K)',c='C3',ls='--',lw=0.8)
+    aT.plot(data['t'][i][s:e],data['T'][i][s:e],label='T (K)',c='C3',ls='--')
     aT.set(ylabel='temperature (K)')
     f.legend(loc='upper center',frameon=False,ncol=2,bbox_to_anchor=(0.5,1.025))
     plt.tight_layout()
@@ -641,17 +641,17 @@ def plot_results(p):
         DY = 0
         for n_p in range(t2['n_p']): # partial component conversion data
             DY += t3['dx_calc'][i][n_p]
-            ax_r.plot(data_calc['t'][i][:-2],t3['dx_calc'][i][n_p],label='calc'+str(n_p),c=c_np[n_p],ls='--',lw=1.3)
+            ax_r.plot(data_calc['t'][i][:-2],t3['dx_calc'][i][n_p],label='calc'+str(n_p),c=c_np[n_p],ls='--')
         
         if t2['n_p']> 1: # add sum of partial components to plot only if > 1
-            ax_r.plot(data_calc['t'][i][:-2],DY,label='sum',c='C3',lw=1.3)
+            ax_r.plot(data_calc['t'][i][:-2],DY,label='sum',c='C3')
         ax_r.set(xlabel='time',ylabel='reaction rate')
         f_r.legend(loc='upper center',frameon=False,ncol=t2['n_p']+2,bbox_to_anchor=(0.5,1.025))
         plt.tight_layout()
         # add figure to tkinter
         
         t3['fig_result'][i] = FigureCanvasTkAgg(f_r,master = tabs[3])   
-        t3['fig_result'][i].get_tk_widget().grid(row=1,rowspan=16,columnspan=2,column=1,ipady=20,ipadx=4,padx=4,sticky=tk.W)
+        t3['fig_result'][i].get_tk_widget().grid(row=1,columnspan=2,column=1,ipady=20,ipadx=4,padx=4,sticky=tk.W)
         t3['fig_result'][i].draw()
         t3['plot_header'][i] = tk.Label(tabs[3],text='-- '+ info['filenames'][i] +' --\n'+
                                      'err%={:3.2f}'.format(t3['err%'][i]))
@@ -668,10 +668,10 @@ def plot_results(p):
     t3['plot_header'][t3['current_res_exp']].grid()
     
 
-t3 = {'results':tk.Text(tabs[3],height=22,width=29),'dx_calc':{},'x_calc':{},
+t3 = {'results':tk.Text(tabs[3],height=27,width=29),'dx_calc':{},'x_calc':{},
       'current_res_exp':0}
 
-t3['results'].grid(row=0,column=0,rowspan=2)
+t3['results'].grid(row=0,column=0,rowspan=4)
 t3['results'].configure(font=("Times new roman", 10))
 tk.Button(tabs[3],text='Next exp.',command=change_result_plot_experiment).grid(row=0,column=2,sticky=tk.W)
 
