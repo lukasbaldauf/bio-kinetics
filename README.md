@@ -22,7 +22,7 @@ where dt is the time step. An objective function defined by
 where n_points are the number of data points is calculated to yield the goodness of the fit. This objective function is minimized by some search algorithm (either Nelder-mead or Powell, others will be added later) by repeating the above mentioned procedure with some new parameters determined by the search algorithm. The best fit is the returned to the user. Note that the obtained parameters and the fit-goodness depends alot on the initial conditions.
 
 #### Usage:  
-       python bio-kinetics.py
+    python bio-kinetics.py
 
 #### Required python packages:  
 numpy (tested 1.18.5)  
