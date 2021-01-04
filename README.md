@@ -1,9 +1,9 @@
-# bio-kinetics
+# tga-kinetics
 
-**Bio-kinetics** estimates kinetic parameters from thermogravimetric time, temperature and mass data. It aims to simplify the kinetic analysis of TGA data for its users through a graphical user interface. It was initially intended for biochar gasification but is also applicable to other TGA experiments. A set of simulated test-data experiments are supplied to test the program and illustrate the input-data structure. Excel files are also supported as input, given that the data structure matches that of the test-data.
+**Tga-kinetics** estimates kinetic parameters from thermogravimetric time, temperature and mass data. It aims to simplify the kinetic analysis of TGA data for its users through a graphical user interface. It was initially intended for biochar gasification but is also applicable to other TGA experiments. A set of simulated test-data experiments are supplied to test the program and illustrate the input-data structure. Excel files are also supported as input, given that the data structure matches that of the test-data.
 
 
-![Screenshot](https://github.com/lukasbaldauf/bio-kinetics/blob/main/program_screenshot.png)
+![Screenshot](https://github.com/lukasbaldauf/tga-kinetics/blob/main/program_screenshot.png)
 
 The parameter estimation is based on the Arrhenius type rate equation:
 
@@ -22,7 +22,7 @@ where *dt* is the time step. An objective function defined by
 where *n_points* are the number of data points is calculated to yield the goodness of the fit. This objective function is minimized by some search algorithm (either Nelder-mead or Powell, others will be added later) by repeating the above mentioned procedure with some new parameters determined by the search algorithm. The best fit is the returned to the user. Note that the obtained parameters and the fit-goodness depends alot on the initial conditions.
 
 #### Usage:  
-    python bio-kinetics.py
+    python tga-kinetics.py
 
 #### Required python packages:  
 numpy (tested 1.18.5)  
