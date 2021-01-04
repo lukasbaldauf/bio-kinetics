@@ -320,7 +320,7 @@ def get_kinetic_options():
 
     
 def write_kinetic_options():
-    description={'A':['Frequency factor','log10'],'E':['Activation enrgy','kj/mol'],
+    description={'A':['Frequency factor','log10'],'E':['Activation energy','kj/mol'],
                 'n':['Reaction order','-'],'c':['Scaling factor','-']}
     init_vals = [8,200,1,0.2] # A, E , n
     steps =[0.25,20,0,0]
