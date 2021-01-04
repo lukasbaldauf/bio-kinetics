@@ -38,7 +38,7 @@ info =  {'n_data':0,'filenames':[],'current_exp':0,
 
 root = Tk()
 root.geometry('850x450')
-root.title('Bio-kinetics.py')
+root.title('tga-kinetics.py')
 
 tab_control = ttk.Notebook(root,)
 
