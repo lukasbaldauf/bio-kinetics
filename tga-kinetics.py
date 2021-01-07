@@ -37,7 +37,7 @@ info =  {'n_data':0,'filenames':[],'current_exp':0,
 
 
 root = Tk()
-root.geometry('850x450')
+root.geometry('850x475')
 root.title('tga-kinetics.py')
 
 tab_control = ttk.Notebook(root,)
@@ -772,7 +772,7 @@ def save_text():
 
 t4 = {'export_entry':tk.Entry(tabs[4],text='filename',width=20)}
 t4['export_entry'].grid(row=0,column=1)
-t4['export_entry'].insert('1',str(datetime.datetime.now()).split('.')[0])
+t4['export_entry'].insert('1',str(datetime.datetime.now()).split('.')[0].split(' ')[0])
 tk.Button(tabs[4],text='Save data',command=save_text).grid(row=1,column=0)
 tk.Label(tabs[4],text='filename:').grid(row=0,column=0)
 
@@ -783,7 +783,7 @@ tk.Label(tabs[4],text='filename:').grid(row=0,column=0)
 """--END--"""
 ##############
 root.mainloop()
-
+input('Press <Enter> to end the program') # avoid closing after loading data in windows
 
 
 
