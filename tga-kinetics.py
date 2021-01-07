@@ -783,7 +783,7 @@ tk.Label(tabs[4],text='filename:').grid(row=0,column=0)
 """--END--"""
 ##############
 root.mainloop()
-input('Press <Enter> to end the program') # avoid closing after loading data in windows
+input('Press <Enter> to end the program\n') # avoid closing after loading data in windows
 
 
 
