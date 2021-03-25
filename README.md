@@ -23,6 +23,7 @@ where *n_points* are the number of data points. The objective function reflects 
 
 #### Usage:  
     python tga-kinetics.py
+Remember to accept every single experimental dataset in the input tab before running an optimization, else the program doesn't run.
 
 #### Required python packages:  
 numpy (tested 1.18.5)  
