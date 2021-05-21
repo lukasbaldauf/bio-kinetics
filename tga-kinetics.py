@@ -394,7 +394,8 @@ def write_optimization_options():
             t2[key] = tk.Entry(tabs[2],width=10)
         t2[key].grid(row=n,column=1)
         t2[key].insert(0,defaults[key])
-t2 = {'method_var':tk.StringVar(),'method':'Nelder-mead','newton_tol':1e-3,'newton_maxiter':25,'maxiter':500}
+t2 = {'method_var':tk.StringVar(),'method':'Nelder-mead','newton_tol':1e-3,
+      'newton_maxiter':5,'maxiter':500}
 
 def run_optimization():
     print('Calculating...')
