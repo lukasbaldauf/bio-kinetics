@@ -18,6 +18,7 @@ from scipy.sparse import diags,csc_matrix
 from scipy.sparse.linalg import spsolve
 import time
 import datetime
+import cma
 
 def nonlinear(x,n): # not used in program.
     # if 40 < n < 92, empirical function to get better starting position
@@ -381,14 +382,14 @@ def write_optimization_options():
     defaults = dict(t2)
     description={
                  'method':'Optimiztion method',
-                 'maxiter':'Maximum optimization iterations',
+                 'maxiter':'Maximum optimization iterations\nCMA-ES: function tolerance (e.g. 1e-7)',
                  'newton_tol':'Non-linear eq. solution tolerance',
                  'newton_maxiter':'Maximum non-linear eq. solving iterations'}
     for n,key in enumerate(description.keys()):
         tk.Label(tabs[2],text=description[key]).grid(row=n,column=0,sticky=tk.W)
         if key =='method':
-            t2[key] = ttk.Combobox(tabs[2],textvar=t2['method_var'],width=10,state='readonly')
-            t2[key]['values'] = tuple(method for method in ['Nelder-mead','Powell'] )
+            t2[key] = ttk.Combobox(tabs[2],textvar=t2['method_var'],width=12,state='readonly')
+            t2[key]['values'] = tuple(method for method in ['Nelder-mead','CMA-ES','Powell'] )
             t2[key].current(0)
         else:
             t2[key] = tk.Entry(tabs[2],width=10)
@@ -408,8 +409,17 @@ def run_optimization():
     #    p.append(1/t2['n_p'])      # could set it so that x1 = p[-1],x2=1-p[-1] and they sum to one
     
     t3['nonlinear'] = 0 #nonlinear-equation solving time
-    t2['res'] = minimize(of,p,method=t2['method_var'].get(),options={'maxiter':int(t2['maxiter'].get())})
     
+    if t2['method_var'].get()=='CMA-ES':
+        xopt,res = cma.fmin2(of, p, 0.5,options={'tolfun':t2['maxiter'].get()})
+        class result:
+            x = xopt
+            fun = res.result[1]
+        t2['res'] = result
+  
+    else:
+        t2['res'] = minimize(of,p,method=t2['method_var'].get(),options={'maxiter':int(t2['maxiter'].get())})
+
     calc_from_res(t2['res'].x)
     t2['p_letters'] = calc_p()
     write_result(t2['p_letters'],t2['res'])
@@ -784,7 +794,7 @@ tk.Label(tabs[4],text='filename:').grid(row=0,column=0)
 """--END--"""
 ##############
 root.mainloop()
-input('Press <Enter> to end the program\n') # avoid closing after loading data in windows
+#input('Press <Enter> to end the program\n') # avoid closing after loading data in windows
 
 
 
