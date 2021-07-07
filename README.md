@@ -19,7 +19,7 @@ where *dt* is the time step. An objective function defined by
 
     sum( (dm_calc/dt - dm_exp/dt)/max(dm_exp) )^2 )/n_points     (3)
 
-where *n_points* are the number of data points. The objective function reflects the goodness of the fit and is minimized by some search algorithm (either Nelder-Mead or Powell, others will be added later) by repeating the above mentioned procedure with some new parameters determined by the search algorithm. The best fitting parameters are then returned to the user. Note that the obtained parameters and the goodness of the fit depend alot on the initial conditions. Powell algorithm seems more suitable when initial paramters are close to local minima.
+where *n_points* are the number of data points. The objective function reflects the goodness of the fit and is minimized by some search algorithm by repeating the above mentioned procedure with some new parameters determined by the search algorithm. CMA-ES from the cma packaged is a good choice when large numbers of parameters are to be optimized. The best fitting parameters are then returned to the user. Note that the obtained parameters and the goodness of the fit depend alot on the initial conditions. Powell algorithm seems more suitable when initial paramters are close to local minima.
 
 #### Usage:  
     python tga-kinetics.py
@@ -30,4 +30,5 @@ numpy (tested 1.18.5)
 scipy (tested 1.5.0)  
 tkinter (tested 8.6)  
 matplotlib (tested 3.2.2)  
-pylightxl  
+pylightxl 
+cma
