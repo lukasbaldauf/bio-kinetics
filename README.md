@@ -34,5 +34,5 @@ numpy (tested 1.18.5)
 scipy (tested 1.5.0)  
 tkinter (tested 8.6)  
 matplotlib (tested 3.2.2)  
-pylightxl 
+pylightxl  
 cma
