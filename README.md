@@ -1,6 +1,6 @@
 # tga-kinetics
 
-## use tga-kinetics.jl instead.
+## Use tga-kinetics.jl instead for better performance and more robust numerical methods: https://github.com/lukasbaldauf/tga-kinetics.jl
 
 **Tga-kinetics** is a simple python script that estimates kinetic parameters from thermogravimetric time, temperature and sample mass data. It aims to simplify the kinetic analysis of TGA data for its users through a graphical user interface. It was initially intended for biochar gasification but is also applicable to other TGA experiments. A set of simulated test-data experiments are supplied to test the program and illustrate the input-data structure. Excel files are also supported as input, given that the data structure matches that of the test-data with constant time steps. 
 
