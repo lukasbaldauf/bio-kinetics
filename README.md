@@ -11,7 +11,7 @@ The parameter estimation is based on the Arrhenius type rate equation:
 
     -dm/dt*(1/c) = dx/dt = A*exp(-E/(R * T))*x^n                 (1)
 
-where *dm/dt* is the derivative of the normalized mass of the sample with respect to time, *c* is a scaling factor to convert the conversion rate *dx/dt* to  *-dm/dt*, *A* is the frequency-factor, *E* is the activation energy, *R* the gas constant, *x* is the conversion (i.e. the  fraction of sample left to react which varies from 1 to 0) and *n* is the reaction order (can be fractional). For additional information, see e.g.: 
+where *dm/dt* is the derivative of the normalized mass of the sample with respect to time, *c* is a scaling factor to convert the conversion rate *dx/dt* to  *-dm/dt*, *A* is the frequency-factor, *E* is the activation energy, *R* the gas constant, *x* is the conversion (i.e. the  fraction of sample left to react which varies from 1 to 0) and *n* is the reaction order (which does not need to be an integer). For additional information, see e.g.: 
 
 - Wang, L., Li, T., Várhegyi, G., Skreiberg, Ø., & Løvås, T. (2018).  
 *CO2 gasification of chars prepared by fast and slow pyrolysis from wood and forest residue: a kinetic study.*  
