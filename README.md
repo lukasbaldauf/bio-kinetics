@@ -17,7 +17,7 @@ where *dm/dt* is the derivative of the normalized mass of the sample with respec
 *CO2 gasification of chars prepared by fast and slow pyrolysis from wood and forest residue: a kinetic study.*  
 Energy & Fuels, 32(1), 588-597. 
 
-The linear form of equation (1), i.e. with *n*=1, is solved through implicit integration using the trapezoidal rule with some initial parameters that can be supplied by the user,yielding the first-order sample conversion. The non-linear form of equation (1) is then solved using Newtons-method with the calculated first-order conversion as the intital values, yielding the n-th order sample conversion *x_calc*. To avoid fluctuating behaivior, the calculated reaction rate -dm_calc/dt is then determined by finite difference scheme instead of equation (1) directly: 
+The linear form of equation (1), i.e. with *n*=1, is solved through implicit integration using the trapezoidal rule with some initial parameters that can be supplied by the user, yielding the first-order sample conversion. The non-linear form of equation (1) is then solved using Newtons-method with the calculated first-order conversion as the intital values, yielding the n-th order sample conversion *x_calc*. To avoid fluctuating behaivior, the calculated reaction rate -dm_calc/dt is then determined by finite difference scheme instead of equation (1) directly: 
 
     -dm_calc/dt = c*(x_calc[i+1] - x_calc[i])/dt                 (2)
   
